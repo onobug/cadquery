@@ -38,8 +38,8 @@ if not is_rtd and not is_appveyor and not is_azure and not is_conda:
 
 
 setup(
-    name="cadquery",
-    version="2.6-dev-novtk",  # Update this for the next release
+    name="cadquery-novtk",
+    version="2.6-dev",  # Update this for the next release
     url="https://github.com/CadQuery/cadquery",
     license="Apache Public License 2.0",
     author="David Cowden",
