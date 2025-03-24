@@ -4,7 +4,6 @@ from json import dumps
 from IPython.display import Javascript
 
 
-from .exporters.vtk import toString
 from .shapes import Shape
 from ..assembly import Assembly
 from .assembly import toJSON

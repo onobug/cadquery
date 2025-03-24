@@ -642,12 +642,6 @@ def test_native_export(simple_assy):
     assert os.path.exists("assy.xml")
 
 
-def test_vtkjs_export(nested_assy):
-
-    exportVTKJS(nested_assy, "assy")
-
-    # only sanity check for now
-    assert os.path.exists("assy.zip")
 
 
 def test_vrml_export(simple_assy):
@@ -712,11 +706,6 @@ def test_export(extension, args, kwargs, tmpdir, nested_assy):
         assert os.path.exists(filename)
 
 
-def test_export_vtkjs(tmpdir, nested_assy):
-
-    with tmpdir:
-        nested_assy.export("nested.vtkjs")
-        assert os.path.exists("nested.vtkjs.zip")
 
 
 def test_export_errors(nested_assy):
@@ -805,10 +794,6 @@ def test_save_gltf_boxes2(boxes2_assy, tmpdir, capfd):
     assert output.err == ""
 
 
-def test_save_vtkjs(nested_assy):
-
-    nested_assy.save("nested", "VTKJS")
-    assert os.path.exists("nested.zip")
 
 
 def test_save_raises(nested_assy):

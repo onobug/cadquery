@@ -5731,15 +5731,6 @@ class TestCadQuery(BaseTest):
         with raises(ValueError):
             Face.makeNSidedSurface(outer_w, [[0, 0, 1]])
 
-    def test_toVtk(self):
-
-        from vtkmodules.vtkCommonDataModel import vtkPolyData
-
-        f = Face.makePlane(2, 2)
-        vtk = f.toVtkPolyData(normals=False)
-
-        assert isinstance(vtk, vtkPolyData)
-        assert vtk.GetNumberOfPolys() == 2
 
     def test_iterators(self):
 
