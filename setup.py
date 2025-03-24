@@ -26,7 +26,7 @@ WHEEL_PATH = "deps/cadquery_ocp_novtk-7.8.1-py3-none-any.whl"
 # Only include the installation dependencies if we are not running on RTD or AppVeyor or in a conda env
 if not is_rtd and not is_appveyor and not is_azure and not is_conda:
     reqs = [
-        f"cadquery_ocp_novtk @ file://{os.path.abspath(WHEEL_PATH)}",  # 絕對路徑保證
+        f"cadquery_ocp_novtk",  # 絕對路徑保證
         # "cadquery-ocp>=7.8.1,<7.9",
         "ezdxf>=1.3.0",
         "multimethod>=1.11,<2.0",
@@ -39,7 +39,7 @@ if not is_rtd and not is_appveyor and not is_azure and not is_conda:
 
 setup(
     name="cadquery-novtk",
-    version="2.6.dev0+novtk",  # Update this for the next release
+    version="2.6.dev+novtk",  # Update this for the next release
     url="https://github.com/CadQuery/cadquery",
     license="Apache Public License 2.0",
     author="David Cowden",
@@ -63,6 +63,9 @@ setup(
     package_data={
         "": [WHEEL_PATH]  # 显示声明明包含 wheel 文件
     },
+    dependency_links=[
+        f'file:///{os.path.abspath(WHEEL_PATH)}'
+    ],
     zip_safe=False,
     platforms="any",
     test_suite="tests",
